@@ -11,5 +11,7 @@ namespace Teste_Sc.ViewModels
 
         [DisplayName("Estados")]
         public string Nome { get; set; }
+
+        public string Sigla { get; set; }
     }
 }

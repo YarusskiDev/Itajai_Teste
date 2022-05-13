@@ -27,8 +27,8 @@ namespace Teste_Sc.Servicos
         }
         private static async Task SaveExcelArquivoEstados(List<EstadosViewModel> resultSerializadoEstados, FileInfo file)
         {
-            DeleteIfExists(file);
             string caminhoDaPastaExcel = @"C:\ExcelTeste";
+            DeleteIfExists(file);
             if (!Directory.Exists(caminhoDaPastaExcel))
             {
                 Directory.CreateDirectory(caminhoDaPastaExcel);

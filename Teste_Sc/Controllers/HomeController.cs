@@ -57,7 +57,7 @@ namespace Teste_Sc.Controllers
             var resultSerializadoEstados = _mapper.Map<List<EstadosViewModel>>(JsonSerializer.Deserialize<List<Distritos>>(resultadoDosEstados));
 
             await _excelService.CriaPlanilhaExcelEstados(resultSerializadoEstados);
-            _emailServico.EnviaEmail(dados.Email);
+            _emailServico.EnviaEmailEstados(dados.Email);
 
             return Redirect("Index");
         }
@@ -78,10 +78,12 @@ namespace Teste_Sc.Controllers
             var cidadesSerializadas = _mapper.Map<List<CidadesViewModel>>(JsonSerializer.Deserialize<List<Distritos>>(resultadoDasCidades));
 
             await _excelService.CriaPlanilhaExcelCidades(cidadesSerializadas);
-            _emailServico.EnviaEmail(dados_Uf.Email);
+            _emailServico.EnviaEmailCidades(dados_Uf.Email);
 
             return Redirect("Index");
         }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

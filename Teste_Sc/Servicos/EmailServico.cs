@@ -13,7 +13,7 @@ namespace Teste_Sc.Servicos
 {
     public class EmailServico
     {
-        public bool EnviaEmail(string email)
+        public bool EnviaEmailCidades(string email)
         {
             bool confirmaEnvio = false;
             try
@@ -34,8 +34,10 @@ namespace Teste_Sc.Servicos
                 };
 
 
-                var planilha = File.ReadAllText("c:\\ExcelTeste\\TodasCidades.xlsx");
-                Attachment data = new Attachment(planilha, MediaTypeNames.Application.Octet);
+                var caminhoPlanilha = "c:\\ExcelTeste\\TodasCidades.xlsx";
+
+
+                Attachment data = new Attachment(caminhoPlanilha);
                 enviaEmail.Attachments.Add(data);
                 enviaEmail.From = new("Crisvideoaulas@gmail.com", "Planilha com estados e cidades do brasil");
                 enviaEmail.Body = "Testando o envio de email smtp pelo gmail";
@@ -54,6 +56,51 @@ namespace Teste_Sc.Servicos
                 return confirmaEnvio;
             }
             
+        }
+
+        public bool EnviaEmailEstados(string email)
+        {
+            bool confirmaEnvio = false;
+            try
+            {
+                string caminhoDaPastaEmail = @"C:\EmailTeste";
+
+                if (!Directory.Exists(caminhoDaPastaEmail))
+                {
+                    Directory.CreateDirectory(caminhoDaPastaEmail);
+                }
+                MailMessage enviaEmail = new();
+                var sender = new SmtpClient("smtp.gmail.com", 587)
+                {
+                    EnableSsl = true,
+                    PickupDirectoryLocation = @"c:\EmailTeste",
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential("crisvideoaulas@gmail.com", "@Masha311291")
+                };
+
+
+                var caminhoPlanilha = "c:\\ExcelTeste\\TodosOsEstados.xlsx";
+
+
+                Attachment data = new Attachment(caminhoPlanilha);
+                enviaEmail.Attachments.Add(data);
+                enviaEmail.From = new("Crisvideoaulas@gmail.com", "Planilha com estados e cidades do brasil");
+                enviaEmail.Body = "Testando o envio de email smtp pelo gmail";
+                enviaEmail.Subject = "Teste envio de planilha";
+                enviaEmail.IsBodyHtml = true;
+                enviaEmail.Priority = MailPriority.Normal;
+                enviaEmail.To.Add(email);
+
+                sender.Send(enviaEmail);
+                return confirmaEnvio = true;
+
+            }
+            catch (Exception ex)
+            {
+
+                return confirmaEnvio;
+            }
+
         }
 
     }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\crist\\source\\repos\\Teste_Sc\\Teste_Sc\\Teste_Sc.csproj": {}
+    "C:\\Users\\crist\\OneDrive\\Área de Trabalho\\Teste_Sc\\Teste_Sc\\Teste_Sc.csproj": {}
   },
   "projects": {
-    "C:\\Users\\crist\\source\\repos\\Teste_Sc\\Teste_Sc\\Teste_Sc.csproj": {
+    "C:\\Users\\crist\\OneDrive\\Área de Trabalho\\Teste_Sc\\Teste_Sc\\Teste_Sc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\crist\\source\\repos\\Teste_Sc\\Teste_Sc\\Teste_Sc.csproj",
+        "projectUniqueName": "C:\\Users\\crist\\OneDrive\\Área de Trabalho\\Teste_Sc\\Teste_Sc\\Teste_Sc.csproj",
         "projectName": "Teste_Sc",
-        "projectPath": "C:\\Users\\crist\\source\\repos\\Teste_Sc\\Teste_Sc\\Teste_Sc.csproj",
+        "projectPath": "C:\\Users\\crist\\OneDrive\\Área de Trabalho\\Teste_Sc\\Teste_Sc\\Teste_Sc.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\crist\\source\\repos\\Teste_Sc\\Teste_Sc\\obj\\",
+        "outputPath": "C:\\Users\\crist\\OneDrive\\Área de Trabalho\\Teste_Sc\\Teste_Sc\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -59,6 +59,10 @@
             "FluentEmail.Smtp": {
               "target": "Package",
               "version": "[3.0.2, )"
+            },
+            "KissLog.AspNetCore": {
+              "target": "Package",
+              "version": "[5.1.2, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

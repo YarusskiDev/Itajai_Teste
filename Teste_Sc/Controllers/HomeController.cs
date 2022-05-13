@@ -37,6 +37,8 @@ namespace Teste_Sc.Controllers
 
         public async Task<IActionResult> Index()
         {
+            _logger.LogInformation("Eu estive aqui!");
+            _logger.LogWarning("Eu sei tudo que você faz aqui");
             return View();
         }
 
